@@ -20,8 +20,10 @@ export class QuerySubscriber<T> {
     this.query.subscribers.add(this);
 
     // On new QuerySubscriber creation, i.e. on new subscription, trigger a new
-    // query run to get updated data
-    this.query.run();
+    // query run if data isnt already cached.
+    if (this.query.state.data === null) {
+      this.query.run();
+    }
   }
 
   /**
