@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "../react-query-lite";
 import { queryClient } from "../queryClient";
+import PostsCount from "./PostsCount";
 
 type Post = {
   id: number;
@@ -55,7 +56,9 @@ export default function Posts() {
     return (
       <>
         <div className="pb-4 flex flex-row justify-between align-middle">
-          <p className="text-2xl">Posts</p>
+          <p className="text-2xl">
+            Posts <PostsCount />
+          </p>
           <button
             className="px-2 border border-green-600 text-green-600 rounded-lg"
             onClick={createNewPost}
