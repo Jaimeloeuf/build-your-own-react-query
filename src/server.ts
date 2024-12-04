@@ -37,8 +37,7 @@ express()
    * Simple middleware to simulate time consuming API calls
    */
   .use(async (_req, _res, next) => {
-    await new Promise((res) => setTimeout(res, 500));
-    // await new Promise((res) => setTimeout(res, 2000));
+    await new Promise((res) => setTimeout(res, 2000));
     next();
   })
 
